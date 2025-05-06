@@ -1,7 +1,6 @@
-import os
 from config import base_url, save_path
-from requester import fetch_url
 from parser import parse_listing_page
+from requester import fetch_url
 from save import save_to_csv
 
 # 只抓取固定页数进行测试

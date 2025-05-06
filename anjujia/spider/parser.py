@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 
+
 def parse_listing_page(html):
     soup = BeautifulSoup(html, "html.parser")
     listings = []

@@ -1,13 +1,15 @@
 import os
+
 from config import base_url, save_path, checkponit_file, log_path, failed_pages
 from logger import get_logger
-from requester import fetch_url
 from parser import parse_listing_page
+from requester import fetch_url
 from save import save_to_csv, save_failed_page
 
 logger = get_logger(log_path)
 
 MAX_CONSECUTIVE_FAILURES = 5  # 最大连续失败次数
+
 
 def load_checkpoint():
     if os.path.exists(checkponit_file):
@@ -15,9 +17,11 @@ def load_checkpoint():
             return int(f.read().strip())
     return 1
 
+
 def save_checkpoint(page):
     with open(checkponit_file, "w") as f:
         f.write(str(page))
+
 
 def run():
     page = load_checkpoint()
@@ -58,6 +62,7 @@ def run():
         page += 1
 
     logger.info("程序运行结束")
+
 
 if __name__ == "__main__":
     run()

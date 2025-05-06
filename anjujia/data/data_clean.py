@@ -1,6 +1,8 @@
 import pandas as pd
+
 # 预设列名
 column_names = ["title", "price", "unit", "layout", "area", "floor", "community", "location", "tags"]
+
 
 # 1. 加载数据，给定列名
 def load_data(file_path):

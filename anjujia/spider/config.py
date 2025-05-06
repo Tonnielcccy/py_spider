@@ -32,6 +32,7 @@ def headers():
         'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6'
     }
 
+
 base_url = "https://wh.zu.anjuke.com/fangyuan/p{page}/"
 save_path = "output/wh_anjuke_rentals.csv"
 log_path = "logs/anjuke.log"

@@ -1,7 +1,10 @@
-import requests
-import time
 import random
+import time
+
+import requests
+
 from config import headers
+
 
 def fetch_url(url, retries=3):
     for _ in range(retries):

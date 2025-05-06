@@ -1,5 +1,6 @@
 import logging
 
+
 def get_logger(log_path):
     # 创建 logger
     logger = logging.getLogger()
