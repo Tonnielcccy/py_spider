@@ -53,8 +53,8 @@ def process_file(file_path, output_path):
 
 if __name__ == "__main__":
     # 修改成你自己的文件路径
-    changsha_file = "py_spider/anjujia/output/cs_cleaned.csv"
-    wuhan_file = "py_spider/anjujia/output/wh_cleaned.csv"
+    changsha_file = "py_spider/anjuke/output/cs_cleaned.csv"
+    wuhan_file = "py_spider/anjuke/output/wh_cleaned.csv"
 
-    process_file(changsha_file, "py_spider/anjujia/output/cs_cleaned_location.csv")
-    process_file(wuhan_file, "py_spider/anjujia/output/wh_cleaned_location.csv")
+    process_file(changsha_file, "py_spider/anjuke/output/cs_cleaned_location.csv")
+    process_file(wuhan_file, "py_spider/anjuke/output/wh_cleaned_location.csv")

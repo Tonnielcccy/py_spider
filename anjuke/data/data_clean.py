@@ -77,7 +77,7 @@ def clean_data(file_path, output_path):
 
 
 # 运行数据清洗流程
-input_file = 'E:/pychaem project/py_spider/anjujia/output/wh_anjuke_rentals.csv'  # 输入文件路径
-output_file = 'E:/pychaem project/py_spider/anjujia/output/wh_cleaned.csv'  # 输出文件路径
+input_file = '/py_spider/anjuke/output/wh_anjuke_rentals.csv'  # 输入文件路径
+output_file = '/py_spider/anjuke/output/wh_cleaned.csv'  # 输出文件路径
 
 clean_data(input_file, output_file)
