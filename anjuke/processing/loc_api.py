@@ -1,9 +1,9 @@
 import pandas as pd
 import requests
 import time
-import sys  # 导入 sys 库用于退出程序
 
-API_KEY = "17970fe625283146a612648145155379"  # 请确保密钥有效
+
+API_KEY = "17970fe625283146a612648145155379"
 SIG = "ee480a03699a29f0e795f5fe2f6f23f6"
 
 
@@ -55,7 +55,7 @@ print("开始地理编码转换...")
 df['location'] = df['standard_location'].apply(geocode)
 
 # 保存结果
-df.to_csv("wh_coordinates.csv", index=False, encoding='utf-8')
+df.to_csv("py_spider/anjuke/output/wh_coordinates.csv", index=False, encoding='utf-8')
 print(f"转换完成，成功解析 {df['location'].notnull().sum()}/{len(df)} 条地址")
 
 # 检查是否出现了三次连续失败

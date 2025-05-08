@@ -24,11 +24,7 @@ def convert_data_types(df):
     # 将 'price' 列转换为数字类型
     df['price'] = pd.to_numeric(df['price'], errors='coerce')
 
-    # 如果 'area' 列是字符串，去除单位（如 "m²"），并转化为浮动数字
     df['area'] = df['area'].str.replace('平米', '').astype(float)
-
-    # 处理日期列，如果存在
-    # df['date'] = pd.to_datetime(df['date'], errors='coerce')
 
     return df
 
@@ -43,10 +39,10 @@ def remove_duplicates(df):
 
 # 异常值处理
 def handle_outliers(df):
-    # 例如，价格不可能为负数
+    # 价格不可能为负数
     df = df[df['price'] > 0]
 
-    # 如果面积为0或不合理，也可以过滤掉
+    # 如果面积为负数或零，则认为是异常值
     df = df[df['area'] > 0]
 
     return df
