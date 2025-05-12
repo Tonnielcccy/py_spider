@@ -2,8 +2,8 @@ import pandas as pd
 import requests
 import time
 
-API_KEY = "17970fe625283146a612648145155379"
-SIG = "ee480a03699a29f0e795f5fe2f6f23f6"
+API_KEY = "api_key"
+SIG = "sig"
 
 # 读取CSV文件
 df = pd.read_csv("py_spider/anjuke/output/cs_cleaned_location.csv")
