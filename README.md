@@ -144,47 +144,47 @@ processing文件夹中是对数据进行初步的处理工作，它的主要功�
 
 ### 2.2 数据采集
 player_data_from_Opta.ipynb中，进行数据采集和简单的数据清洗，使用BeautifulSoup解析HTML页面，提取出我们需要的数据。得到以下内容：
-![img.png](opta/img/figure_9.png)
+![img1.png](opta/img/figure_9.png)
 在爬取过程中使用分阶段爬取，得到players_attack_data.xlsx、players_chanceCreation_data.xlsx、players_defending_data.xlsx、players_passing_data.xlsx和players_possession_data.xlsx
 然后将数据进行合并得到players_data.xlsx，再进行简单清理后保存为cleaned_players_data.xlsx
 
 ### 2.3 数据处理与描述
 
 来自俱乐部占比：
-![img.png](opta/img/figure_10.png)
+![img2.png](opta/img/figure_10.png)
 
 球员位置占比（1：前锋 2：中场 3：后卫）：
-![img.png](opta/img/figure_11.png)
+![img3.png](opta/img/figure_11.png)
 
 ### 2.4 PCA、KMeans聚类和决策树
 对数据进行PCA降维，使用KMeans聚类算法进行聚类，最后使用决策树进行分类。
 
 首先通过碎石图判断PCA主成分数量，确定主成分为4。
-![img.png](opta/img/figure_1.png)
+![img4.png](opta/img/figure_1.png)
 
 PCA降维之后，绘制每个成分的贡献值图：
-![img.png](opta/img/figure_2.png)
+![img5.png](opta/img/figure_2.png)
 
 同时绘制每个变量对主成分贡献值的热力图：
-![img.png](opta/img/figure_3.png)
+![img6.png](opta/img/figure_3.png)
 
 对4个成分命名为：进攻能力、防守能力、助攻能力、进球效率
 
 kMeans聚类，首先使用肘部法则确定聚类数目为3：
-![img.png](opta/img/figure_4.png)
+![img7.png](opta/img/figure_4.png)
 计算得到聚类轮廓系数为0.31
 
 然后绘制聚类结果，红叉位置为中心值：
-![img.png](opta/img/figure_5.png)
+![img8.png](opta/img/figure_5.png)
 
 判断最大深度，使用交叉验证法：
-![img.png](opta/img/figure_8.png)
+![img9.png](opta/img/figure_8.png)
 
 最后使用决策树进行分类，得到如下结果：
-![img.png](opta/img/figure_7.png)
+![img10.png](opta/img/figure_7.png)
 
 并且绘制混淆矩阵：
-![img.png](opta/img/figure_6.png)
+![img11.png](opta/img/figure_6.png)
 看出聚类效果较好，判断错误的较少。
 
 同时训练模型准确率为0.81，测试集准确率为0.79，模型效果较好。
