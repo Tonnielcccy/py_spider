@@ -9,20 +9,20 @@ import pandas as pd
 
 
 # 读取原始 CSV 和重新爬取的 CSV
-original_csv = 'data_20250523.csv'
-recrawled_csv = 'recrawled_data_20250523.csv'
-recrawled_csv1 = 'recrawled_data_20250524.csv'
+original_csv = 'data_20250526.csv'
+recrawled_csv = 'recrawled_data_20250527.csv'
+# recrawled_csv1 = 'recrawled_data_20250524.csv'
 
 df_original = pd.read_csv(original_csv)
 df_recrawled = pd.read_csv(recrawled_csv)
-df_recrawled1 = pd.read_csv(recrawled_csv1)
+# df_recrawled1 = pd.read_csv(recrawled_csv1)
 
 # 删除原始数据中有问题的行（根据 URL）
 df_original = df_original[~df_original['url'].isin(df_recrawled['url'])]
-df_original = df_original[~df_original['url'].isin(df_recrawled1['url'])]
+# df_original = df_original[~df_original['url'].isin(df_recrawled1['url'])]
 
 # 合并数据
-df_final = pd.concat([df_original, df_recrawled, df_recrawled1], ignore_index=True)
+df_final = pd.concat([df_original, df_recrawled], ignore_index=True)
 
 # 调试：打印 date 列的唯一值，检查原始数据内容
 print("合并后 date 列的唯一值：")
